@@ -7,6 +7,7 @@ RSpec.describe "companies/show", type: :view do
 
   it "renders attributes in <p>" do
     render
+    expect(rendered).to match(@company.id.to_s)
     expect(rendered).to match(@company.name)
     expect(rendered).to match(@company.branch_name)
     expect(rendered).to match(Regexp.quote(@company.telephone))
