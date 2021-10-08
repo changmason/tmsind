@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Showing Company</h1>
+</div>
+
+<br>
 
 <p>
   <strong>ID:</strong>
@@ -60,5 +64,7 @@
   <%= @company.lat_lng %>
 </p>
 
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+<div class="actions mb-3">
+  <%= link_to 'Edit', edit_company_path(@company), class: "btn btn-primary me-1" %> |
+  <%= link_to 'Back', companies_path, class: "btn btn-light ms-1" %>
+</div>
