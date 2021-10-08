@@ -18,7 +18,6 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'pry'
   gem 'rspec-rails'
-  gem 'shoulda-matchers'
 end
 
 group :development do
@@ -32,6 +31,8 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'faker'
+  gem 'rails-controller-testing'
+  gem 'shoulda-matchers'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
