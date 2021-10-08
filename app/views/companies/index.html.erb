@@ -1,30 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Companies</h1>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group me-2">
+      <%= link_to 'New Company', new_company_path, class: 'btn btn-sm btn-outline-secondary' %>
+    </div>
+  </div>
+</div>
 
-<h1>Companies</h1>
+<br>
 
-<table>
+<table class="table table-striped table-hover table-sm">
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Branch name</th>
-      <th>Telephone</th>
-      <th>Address</th>
-      <th>Email</th>
-      <th>Business hours</th>
-      <th>Charges</th>
-      <th>Main type</th>
-      <th>Sub type</th>
-      <th>Company no</th>
-      <th>Lat lng</th>
-      <th colspan="3"></th>
+      <th style="width: 4%">ID</th>
+      <th style="width: 8%">Name1</th>
+      <th style="width: 8%">Name2</th>
+      <th style="width: 8%">Tel</th>
+      <th style="width: 12%">Address</th>
+      <th style="width: 10%">Email</th>
+      <th style="width: 8%">Hours</th>
+      <th style="width: 8%">Charges</th>
+      <th style="width: 6%">Type1</th>
+      <th style="width: 6%">Type2</th>
+      <th style="width: 5%">CID</th>
+      <th style="width: 6%">LatLng</th>
+      <th style="width: 3%" colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @companies.each do |company| %>
       <tr>
-        <td><%= company.id %></td>
+        <td><%= link_to "#{company.id}", company %></td>
         <td><%= company.name %></td>
         <td><%= company.branch_name %></td>
         <td><%= company.telephone %></td>
@@ -36,14 +43,9 @@
         <td><%= company.sub_type %></td>
         <td><%= company.company_no %></td>
         <td><%= company.lat_lng %></td>
-        <td><%= link_to 'Show', company %></td>
-        <td><%= link_to 'Edit', edit_company_path(company) %></td>
-        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '', edit_company_path(company), class: 'bi bi-pencil-square' %></td>
+        <td><%= link_to '', company, method: :delete, class: 'bi bi-trash-fill', data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Company', new_company_path %>
