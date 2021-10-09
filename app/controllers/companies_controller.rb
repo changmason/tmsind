@@ -3,7 +3,7 @@ class CompaniesController < ApplicationController
 
   # GET /companies or /companies.json
   def index
-    @companies = Company.all
+    @companies = search_companies
   end
 
   # GET /companies/1 or /companies/1.json
@@ -57,6 +57,41 @@ class CompaniesController < ApplicationController
   end
 
   private
+    def search_companies
+      scope = Company
+
+      if params[:name].present?
+        scope = scope.where(['name like ?', "%#{params[:name]}%"])
+      end
+
+      if params[:telephone].present?
+        scope = scope.where(telephone: params[:telephone])
+      end
+
+      if params[:address].present?
+        scope = scope.where(['address like ?', "%#{params[:address]}%"])
+      end
+
+      if params[:email].present?
+        scope = scope.where(email: params[:email])
+      end
+
+      if params[:main_type].present?
+        scope = scope.where(main_type: params[:main_type])
+      end
+
+      if params[:sub_type].present? && params[:sub_type].last.present?
+        scope = scope.where(sub_type: params[:sub_type])
+      end
+
+      if params[:company_no].present?
+        scope = scope.where(company_no: params[:company_no])
+      end
+
+      scope.all
+    end
+
+
     # Use callbacks to share common setup or constraints between actions.
     def set_company
       @company = Company.find(params[:id])
