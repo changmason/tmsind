@@ -65,8 +65,9 @@
                 <%= text_field_tag :company_no, params[:company_no], class: "form-control form-control-sm" %>
               </div>
 
-              <div class="d-grid gap-2 actions mt-3 mx-2">
-                <%= submit_tag("Search", class: "btn btn-primary") %>
+              <div class="actions mt-3 mx-1">
+                <%= submit_tag("Search", class: "btn btn-primary float-end me-2") %>
+                <%= link_to 'Clear', companies_path, class: "btn btn-light float-end me-2" %>
               </div>
             <% end %>
           <% end %>
