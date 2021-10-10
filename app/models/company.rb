@@ -1,3 +1,3 @@
 class Company < ApplicationRecord
-  validates :name, presence: true
+  validates :name, :main_type, :sub_type, presence: true
 end
