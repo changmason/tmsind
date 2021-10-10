@@ -32,7 +32,7 @@
           <div class="position-sticky pt-3">
 
           <% if params[:action] == 'index' %>
-            <%= form_with(url: companies_path, method: :get, local: true) do %>
+            <%= form_with(url: companies_path, method: :get, local: true, id: 'search-form') do %>
               <div class="field mx-2 mb-1">
                 <%= label_tag :name, 'Name: ', class: "form-label" %>
                 <%= text_field_tag :name, params[:name], class: "form-control form-control-sm" %>
@@ -53,7 +53,7 @@
 
               <div class="field mx-2 mb-1">
                 <%= label_tag :main_type, 'Main type: ', class: "form-label" %>
-                <%= select_tag :main_type, options_for_select(all_main_types, params[:main_type]), class: "form-select form-select-sm" %>
+                <%= select_tag :main_type, options_for_select(all_main_types, params[:main_type]), include_blank: true, class: "form-select form-select-sm" %>
               </div>
               <div class="field mx-2 mb-1">
                 <%= label_tag :sub_type, 'Sub type: ', class: "form-label" %>
