@@ -20,8 +20,6 @@ class ImportTaipeiComapnies < ActiveRecord::Migration[6.1]
         lat_lng: row[:__latlng]
       )
 
-      company.main_type = "" if company.main_type == "null"
-
       unless company.save
         puts "Data error, cannot save #{company.inspect}"
       end
