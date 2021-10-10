@@ -18,10 +18,11 @@
 ### Build the project
 
   1. Clone and `cd` to the project
-  2. Run command `bundle install` to install all dependencies
-  3. Run command `rails db:create` to create the database
-  4. Run command `rails db:migrate` to create the tables
-  5. Run command `rails data:migrate` to import initial data
+  2. Run command `bundle install` to install ruby dependencies
+  3. Run command `yarn install` to install js dependencies
+  4. Run command `rails db:create` to create the database
+  5. Run command `rails db:migrate` to create the tables
+  6. Run command `rails data:migrate` to import initial data
 
 ### Run the server
 
