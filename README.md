@@ -1,24 +1,32 @@
-# README
+# Tmsind 臺北市運動產業業者名單
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## About this project
 
-Things you may want to cover:
+  This project implements a simple CRUD app for managing companies in the sport-related industry of Taipei. The initial data of the companies are imported from `tmsind.csv`. This app also provides a "search" feature for filtering the companies by their `name`, `telephone`, `address`, `email`, `main_type`, `sub_type` and `company_no`.
 
-* Ruby version
+  The demo site is available on heroku: https://tmsind.herokuapp.com/
 
-* System dependencies
+## To start up
 
-* Configuration
+  Make sure you have `ruby 3.0.2p107` installed on your system. If you don't,  please update `Gemfile` based on what you have.
 
-* Database creation
+  This project also requires `NodeJS` with `yarn` package manager, you can visit these websites for more information:
 
-* Database initialization
+  - https://nodejs.org/en/
+  - https://yarnpkg.com/
 
-* How to run the test suite
+### Build the project
 
-* Services (job queues, cache servers, search engines, etc.)
+  1. Clone and `cd` to the project
+  2. Run command `bundle install` to install all dependencies
+  3. Run command `rails db:create` to create the database
+  4. Run command `rails db:migrate` to create the tables
+  5. Run command `rails data:migrate` to import initial data
 
-* Deployment instructions
+### Run the server
 
-* ...
+  Run command `rails server` to start the development server and then visit http://127.0.0.1:3000
+
+### Run the tests
+
+  Run command `bundle exec rspec -f documentation` to run all the tests and output the results in documentation format.
